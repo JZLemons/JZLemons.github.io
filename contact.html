@@ -2,42 +2,44 @@
 <html>
 <head>
 <title>Contact Me</title>
+<link rel="stylesheet" href="warm_purple.css">
 <style>
 body {
-	background-color: #211a2e;
+	background-color: var(--color-background);
 	font-family: Arial;
-	color: #DDD0F0;
+	color: var(--color-text);
+	overflow-y: scroll;
 }
 
 h1 {
 	text-align: center;
-	color: #b896e8;
+	color: var(--color-heading);
 }
 
 h2 {
-    color: #b896e8;
+    color: var(--color-heading);
     text-align: center;
     font-weight: normal;
 }
 
 hr {
-	border: 1px solid #4a3e60;
+	border: 1px solid var(--color-border);
 }
 
 p {
-	color: #7a6490;
+	color: var(--color-muted);
 }
 
 form {
 	width: 500px;
 	margin: auto;
-	background-color: #19132a;
+	background-color: var(--color-surface);
 	padding: 20px;
 	border-radius: 10px;
 }
 
 fieldset {
-	border: 1px solid #4a3e60;
+	border: 1px solid var(--color-border);
 	border-radius: 6px;
 	padding: 15px;
 	margin-bottom: 20px;
@@ -45,7 +47,7 @@ fieldset {
 
 legend {
 	font-weight: bold;
-	color: #b896e8;
+	color: var(--color-heading);
 	padding: 0 8px;
 }
 
@@ -68,28 +70,28 @@ legend {
 }
 
 #btn_home {
-	background-color: #7fa1f1;
-	color: #142a5d;
+	background-color: var(--color-accent3);
+	color: var(--color-accent3-dark);
 }
 
 #btn_howto {
-	background-color: #f094c0;
-	color: #6a1f40;
+	background-color: var(--color-highlight);
+	color: var(--color-highlight-dark);
 }
 
 #btn_media {
-	background-color: #f5e47a;
-	color: #5c4f16;
+	background-color: var(--color-warning);
+	color: var(--color-warning-dark);
 }
 
 #btn_shop {
-	background-color: #62e89a;
-	color: #1d5c3d;
+	background-color: var(--color-success);
+	color: var(--color-success-dark);
 }
 
 #btn_contact {
-	background-color: #f4ae72;
-	color: #5d3614;
+	background-color: var(--color-accent2);
+	color: var(--color-accent2-dark);
 }
 
 input[type="text"], input[type="date"], input[type="number"], input[type="file"], textarea, select {
@@ -97,30 +99,30 @@ input[type="text"], input[type="date"], input[type="number"], input[type="file"]
 	width: 100%;
 	margin-bottom: 15px;
 	padding: 5px;
-	background-color: #30264a;
-	color: #ddd0f0;
-	border: 1px solid #4a3e60;
+	background-color: var(--color-raised);
+	color: var(--color-text);
+	border: 1px solid var(--color-border);
 	border-radius: 6px;
 }
 
 input[type="checkbox"], input[type="radio"] {
-	accent-color: #62e89a;
+	accent-color: var(--color-success);
 	width: auto;
 	margin-right: 8px;
 	margin-bottom: 8px;
 }
 
 input[type="date"], select {
-	color: #ddd0f0;
+	color: var(--color-text);
 }
 
 input[type="file"] {
-	color: #7a6490;
+	color: var(--color-muted);
 }
 
 input[type="file"]::file-selector-button {
-	background-color: #f5e47a;
-	color: #5c4f16;
+	background-color: var(--color-warning);
+	color: var(--color-warning-dark);
 	border: none;
 	padding: 5px 10px;
 	border-radius: 4px;
@@ -129,7 +131,7 @@ input[type="file"]::file-selector-button {
 label {
 	display: block;
 	font-weight: bold;
-	color: #d9b0ff;
+	color: var(--color-primary);
 	margin-top: 12px;
 	margin-bottom: 5px;
 }
@@ -151,19 +153,19 @@ button {
 	color: white;
 	padding: 20px;
 	width: 100%;
-	/* color: #ddd0f0; */
+	/* color: var(--color-text); */
 	font-weight: bold;
 	border-radius: 6px;
 }
 
 button[type="submit"] {
-	background-color: #62e89a;
-	color: #1d5c3d;
+	background-color: var(--color-success);
+	color: var(--color-success-dark);
 }
 
 button[type="reset"] {
-	background-color: #f5e47a;
-	color: #5c4f16;
+	background-color: var(--color-warning);
+	color: var(--color-warning-dark);
 }
 </style>
 </head>
@@ -177,7 +179,7 @@ button[type="reset"] {
 	<div class="menu_buttons">
 		<a href="index.html" id="btn_home" class="btn">Home</a>
 		<button type="button" id="btn_howto" class="btn">How To</button>
-		<button type="button" id="btn_media" class="btn">Media</button>
+		<a href="media.html" id="btn_media" class="btn">Media</a>
 		<button type="button" id="btn_shop" class="btn">Shop</button>
 		<a href="contact.html" id="btn_contact" class="btn">Contact</a>
 	</div>
