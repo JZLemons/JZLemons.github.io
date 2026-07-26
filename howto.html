@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justin's Portfolio</title>
+    <link rel="stylesheet" href="warm_purple.css">
+    <style>
+        body {
+            background-color: var(--color-background);
+            color: var(--color-text);
+            font-family: Arial;
+            overflow-y: scroll;
+        }
+
+        h1 {
+            color: var(--color-heading);
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--color-heading);
+            text-align: center;
+            font-weight: normal;
+        }
+
+        hr {
+            border: 1px solid var(--color-border);
+        }
+
+        a {
+            color: var(--color-link);
+        }
+
+        form {
+	        width: 500px;
+	        margin: auto;
+	        background-color: var(--color-surface);
+	        padding: 20px;
+            border-radius: 10px;
+        }
+
+        fieldset {
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: var(--color-heading);
+            padding: 0 8px;
+        }
+
+        .menu_buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .menu_buttons .btn {
+            flex: 1;
+        }
+
+        #btn_media {
+            background-color: var(--color-warning);
+            color: var(--color-warning-dark);
+        }
+
+        #btn_contact {
+            background-color: var(--color-accent2);
+            color: var(--color-accent2-dark);
+        }
+
+        #btn_howto {
+            background-color: var(--color-highlight);
+            color: var(--color-highlight-dark);
+        }
+
+        #btn_shop {
+            background-color: var(--color-success);
+            color: var(--color-success-dark);
+        }
+
+        #btn_home {
+            background-color: var(--color-accent3);
+            color: var(--color-accent3-dark);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+
+        pre {
+            background-color: var(--color-raised);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 10px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: "Courier New", monospace;
+            font-size: 14px;
+        }
+
+        .media_fieldset {
+            background-color: var(--color-raised);
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 240px;
+            border: none;
+            border-radius: 6px;
+        }
+
+        #chat_log {
+            max-height: 250px;
+            overflow-y: auto;
+            background-color: var(--color-raised);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .chat_message {
+            margin: 0 0 8px;
+            font-size: 14px;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        .chat_user {
+            color: var(--color-primary);
+        }
+
+        .chat_bot {
+            color: var(--color-text);
+        }
+
+        #chat_input {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            background-color: var(--color-raised);
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        #chat_send {
+            background-color: var(--color-success);
+            color: var(--color-success-dark);
+        }
+
+        #chat_widget {
+            position: fixed;
+            box-sizing: border-box;
+            bottom: 20px;
+            left: calc(50% + 290px);
+            width: 260px;
+            background-color: var(--color-surface);
+            z-index: 1000;
+            margin-bottom: 0;
+        }
+
+        #howto_sidebar {
+            position: fixed;
+            box-sizing: border-box;
+            top: 20px;
+            bottom: 20px;
+            left: calc(50% - 550px);
+            width: 260px;
+            background-color: var(--color-surface);
+            overflow-y: auto;
+            z-index: 1000;
+            margin-bottom: 0;
+        }
+
+        #howto_sidebar .btn {
+            background-color: var(--color-accent3);
+            color: var(--color-accent3-dark);
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>B & B</h1>
+        <h2>HOW TO</h2>
+        <hr>
+
+        <div class="menu_buttons">
+            <a href="index.html" id="btn_home" class="btn">Home</a>
+            <a href="howto.html" id="btn_howto" class="btn">How To</a>
+            <a href="media.html" id="btn_media" class="btn">Media</a>
+            <button type="button" id="btn_shop" class="btn">Shop</button>
+            <a href="contact.html" id="btn_contact" class="btn">Contact</a>
+        </div>
+
+        <fieldset>
+            <legend>Blink an LED with Arduino</legend>
+            <p>Make an LED turn on and off periodically using an Arduino and a few simple components.</p>
+
+            <p><strong style="color: var(--color-success);">What you'll need:</strong></p>
+            <ul>
+                <li>1 Arduino board (Uno or similar)</li>
+                <li>1 LED</li>
+                <li>1 220&Omega; resistor</li>
+                <li>1 breadboard</li>
+                <li>3 jumper wires</li>
+                <li>1 USB cable to connect the Arduino to your computer</li>
+            </ul>
+
+            <p><strong style="color: var(--color-highlight);">Wiring:</strong></p>
+            <ol>
+                <li>Place the LED on the breadboard. Note which leg is longer (the anode / positive leg) and which is shorter (the cathode / negative leg).</li>
+                <li>Connect the longer leg (positive +) to one end of the 220&Omega; resistor.</li>
+                <li>Connect the other end of the resistor to pin 13 on the Arduino using a jumper wire.</li>
+                <li>Connect the shorter leg (negative -) of the LED to the ground rail on the breadboard using a jumper wire.</li>
+                <li>Connect the ground rail of the breadboard to the Arduino's GND pin using a jumper wire.</li>
+            </ol>
+
+            <fieldset class="media_fieldset">
+                <img src="led.png" alt="Diagram of an LED showing the longer anode leg and shorter cathode leg">
+                <p style="color: var(--color-muted); font-size: 14px; font-style: italic;">Arduino. (2024, January 30). <em>How are the LEDs represented in the Starter Kit projects book?</em> [Image]. https://support.arduino.cc/hc/article_attachments/12416016395676</p>
+
+                <img src="blink_circuit.png" alt="Circuit diagram of the LED blink project wired on a breadboard">
+                <p style="color: var(--color-muted); font-size: 14px; font-style: italic;">Circuit diagram created using Tinkercad (https://www.tinkercad.com/).</p>
+            </fieldset>
+
+            <p><strong style="color: var(--color-warning);">Code:</strong></p>
+            <pre><code>void setup() {
+  pinMode(13, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(13, HIGH);
+  delay(1000);
+  digitalWrite(13, LOW);
+  delay(1000);
+}</code></pre>
+
+            <ol>
+                <li>Open the Arduino IDE and paste in the code above.</li>
+                <li>Under Tools, select your board (e.g. Arduino Uno) and the correct port.</li>
+                    (if you are unsure which port to select, disconnect your Arduino and check the list of ports, then reconnect it and see which new port appears)
+                <li>Click Upload.</li>
+            </ol>
+
+            <fieldset class="media_fieldset">
+                <img src="Arduino_IDE.png" alt="The Arduino IDE showing the Blink sketch ready to upload">
+                <p style="color: var(--color-muted); font-size: 14px; font-style: italic;">Söderby, K., &amp; Hylén, J. (2024, January 17). <em>Getting Started with Arduino IDE 2</em>. Arduino Documentation. https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2/</p>
+            </fieldset>
+
+            <p><strong style="color: var(--color-accent2);">Troubleshooting:</strong></p>
+            <p>Once the upload finishes, the LED should turn on and off once per second. If it isn't working as expected, check the following:</p>
+            <ul>
+                <li>The longer leg of the LED (anode) should connect toward the resistor side, and the shorter leg (cathode) toward GND.</li>
+                <li>The resistor is in place between the LED and pin 13.</li>
+                <li>All jumper wires and the LED are firmly seated in the breadboard, in the correct rows.</li>
+                <li>The IDE shows "Done uploading" with no red error text in the console after clicking Upload.</li>
+                <li>The correct board and port are selected under the Tools menu.</li>
+                <li>The USB cable is a data cable, not a charge-only cable.</li>
+                <li>The pin number in the code (13) matches the pin you actually wired the LED to.</li>
+            </ul>
+
+            <p><strong style="color: var(--color-accent3);">Video demonstration:</strong></p>
+            <fieldset class="media_fieldset">
+                <iframe src="https://www.youtube.com/embed/FKekzzj5844" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <p style="color: var(--color-muted); font-size: 14px; font-style: italic;">Science Buddies. (2022, October 22). <em>How to blink an LED with Arduino (Lesson #2)</em> [Video]. YouTube. https://www.youtube.com/watch?v=FKekzzj5844</p>
+            </fieldset>
+        </fieldset>
+
+    </form>
+
+    <fieldset id="howto_sidebar">
+        <legend>Tutorials</legend>
+        <button type="button" class="btn">Blink an LED with an Arduino</button>
+        <p>More how-to guides coming soon.</p>
+    </fieldset>
+
+    <fieldset id="chat_widget">
+        <legend>B&amp;B Chatbot</legend>
+        <div id="chat_log"></div>
+        <input type="text" id="chat_input" placeholder="Ask me anything...">
+        <button type="button" id="chat_send" class="btn">Send</button>
+    </fieldset>
+
+    <script>
+        const groqApiKey = 'NO_KEY_4_U';
+        const groqUrl = 'https://api.groq.com/openai/v1/chat/completions';
+        const groqModel = 'llama-3.3-70b-versatile';
+
+        const chatLog = document.getElementById('chat_log');
+        const chatInput = document.getElementById('chat_input');
+        const chatSend = document.getElementById('chat_send');
+        let chatHistory = [
+            {
+                role: 'system',
+                content: 'You are a helpful assistant on a hobbyist electronics and programming portfolio website. Only answer questions related to programming, software development, electronics, circuits, and microcontrollers (such as Arduino). If the user asks about something unrelated to these topics, politely explain that you can only help with programming and electronics questions, and do not answer the unrelated question.'
+            }
+        ];
+
+        function addMessage(text, sender) {
+            const msg = document.createElement('p');
+            msg.className = 'chat_message ' + (sender === 'user' ? 'chat_user' : 'chat_bot');
+            msg.textContent = (sender === 'user' ? 'You: ' : 'Bot: ') + text;
+            chatLog.appendChild(msg);
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+
+        async function sendMessage() {
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            addMessage(message, 'user');
+            chatInput.value = '';
+            chatHistory.push({ role: 'user', content: message });
+
+            try {
+                const response = await fetch(groqUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + groqApiKey
+                    },
+                    body: JSON.stringify({ model: groqModel, messages: chatHistory })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    console.error('Groq API error:', data);
+                    addMessage('API error: ' + (data.error ? data.error.message : response.status), 'bot');
+                    return;
+                }
+
+                const reply = data.choices[0].message.content;
+
+                chatHistory.push({ role: 'assistant', content: reply });
+                addMessage(reply, 'bot');
+            } catch (error) {
+                console.error('Chat request failed:', error);
+                addMessage('Sorry, something went wrong: ' + error.message, 'bot');
+            }
+        }
+
+        chatSend.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>
