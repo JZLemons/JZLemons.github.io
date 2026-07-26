@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
 <title>Contact Me</title>
@@ -95,7 +94,7 @@ legend {
 	color: var(--color-accent2-dark);
 }
 
-input[type="text"], input[type="date"], input[type="number"], input[type="file"], textarea, select {
+input[type="text"], input[type="email"], input[type="date"], input[type="number"], input[type="file"], textarea, select {
 	box-sizing: border-box;
 	width: 100%;
 	margin-bottom: 15px;
@@ -171,7 +170,7 @@ button[type="reset"] {
 </style>
 </head>
 <body>
-<form>
+<form novalidate>
 
         <h1>B & B</h1>
         <h2>CONTACT</h2>
@@ -179,7 +178,7 @@ button[type="reset"] {
 
 	<div class="menu_buttons">
 		<a href="index.html" id="btn_home" class="btn">Home</a>
-		<button type="button" id="btn_howto" class="btn">How To</button>
+		<a href="howto.html" id="btn_howto" class="btn">How To</a>
 		<a href="media.html" id="btn_media" class="btn">Media</a>
 		<button type="button" id="btn_shop" class="btn">Shop</button>
 		<a href="contact.html" id="btn_contact" class="btn">Contact</a>
@@ -191,8 +190,9 @@ button[type="reset"] {
 		<label for="name">Name</label>
 		<input type="text" id="name" name="name">
 
-		<label for="email">Email</label>
-		<input type="text" id="email" name="email">
+		<label for="email">Email <span style="color: var(--color-highlight);">*</span></label>
+		<input type="email" id="email" name="email" required>
+		<p id="email-error" style="color: var(--color-highlight); font-size: 13px; margin: -10px 0 10px;"></p>
 
 		<label for="phone">Phone Number</label>
 		<input type="text" id="phone" name="phone">
@@ -204,8 +204,9 @@ button[type="reset"] {
 		<label for="subject">Subject</label>
 		<input type="text" id="subject" name="subject">
 
-		<label for="message">Message</label>
+		<label for="message">Message <span style="color: var(--color-highlight);">*</span></label>
 		<textarea id="message" name="message" rows="5"></textarea>
+		<p id="message-error" style="color: var(--color-highlight); font-size: 13px; margin: -10px 0 10px;"></p>
 
 		<label for="help">What do you need help with?</label>
 		<select id="help" name="help">
@@ -237,6 +238,36 @@ button[type="reset"] {
 	</div>
 
 </form>
+
+<script>
+	const form = document.querySelector('form');
+	const emailInput = document.getElementById('email');
+	const messageInput = document.getElementById('message');
+	const emailError = document.getElementById('email-error');
+	const messageError = document.getElementById('message-error');
+
+	form.addEventListener('submit', function (e) {
+		let isValid = true;
+
+		if (!emailInput.checkValidity()) {
+			emailError.textContent = 'Please enter a valid email address.';
+			isValid = false;
+		} else {
+			emailError.textContent = '';
+		}
+
+		if (messageInput.value.trim() === '') {
+			messageError.textContent = 'Please enter a message.';
+			isValid = false;
+		} else {
+			messageError.textContent = '';
+		}
+
+		if (!isValid) {
+			e.preventDefault();
+		}
+	});
+</script>
 
 </body>
 </html>
