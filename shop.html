@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Justin's Portfolio</title>
+<link rel="stylesheet" href="warm_purple.css">
+<style>
+body {
+	background-color: var(--color-background);
+	font-family: Arial;
+	color: var(--color-text);
+	overflow-y: scroll;
+}
+
+h1 {
+	text-align: center;
+	color: var(--color-heading);
+}
+
+h2 {
+	color: var(--color-heading);
+	text-align: center;
+	font-weight: normal;
+}
+
+hr {
+	border: 1px solid var(--color-border);
+}
+
+form {
+	width: 500px;
+	margin: auto;
+	background-color: var(--color-surface);
+	padding: 20px;
+	border-radius: 10px;
+}
+
+fieldset {
+	border: 1px solid var(--color-border);
+	border-radius: 6px;
+	padding: 15px;
+	margin-bottom: 20px;
+}
+
+legend {
+	font-weight: bold;
+	color: var(--color-heading);
+	padding: 0 8px;
+}
+
+
+.menu_buttons {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 20px
+}
+
+.menu_buttons .btn {
+	flex: 1;
+	padding: 10px;
+	border: none;
+	border-radius: 6px;
+	font-weight: bold;
+	font-size: 1rem;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#btn_home {
+	background-color: var(--color-accent3);
+	color: var(--color-accent3-dark);
+}
+
+#btn_howto {
+	background-color: var(--color-highlight);
+	color: var(--color-highlight-dark);
+}
+
+#btn_media {
+	background-color: var(--color-warning);
+	color: var(--color-warning-dark);
+}
+
+#btn_shop {
+	background-color: var(--color-success);
+	color: var(--color-success-dark);
+}
+
+#btn_contact {
+	color: var(--color-accent2-dark);
+	background-color: var(--color-accent2);
+}
+
+label {
+	display: block;
+	font-weight: bold;
+	color: var(--color-primary);
+	margin-top: 12px;
+	margin-bottom: 5px;
+}
+
+select, input[type="text"] {
+	box-sizing: border-box;
+	width: 100%;
+	margin-bottom: 15px;
+	padding: 5px;
+	background-color: var(--color-raised);
+	color: var(--color-text);
+	border: 1px solid var(--color-border);
+	border-radius: 6px;
+}
+
+.order_row {
+	display: grid;
+	grid-template-columns: 2fr 1fr 70px;
+	gap: 10px;
+	align-items: center;
+	padding: 6px 0;
+	border-bottom: 1px solid var(--color-border);
+}
+.price_cell {
+	text-align: right;
+}
+.original_price {
+	text-decoration: line-through;
+	color: var(--color-muted);
+	margin-right: 6px;
+}
+.sale_price {
+	font-weight: bold;
+	color: var(--color-accent2);
+}
+
+.order_row input[type="number"] {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 5px;
+	background-color: var(--color-raised);
+	color: var(--color-text);
+	border: 1px solid var(--color-border);
+	border-radius: 6px;
+}
+
+#order_summary p {
+	margin: 4px 0;
+	font-size: 14px;
+}
+
+.summary_total {
+	font-weight: bold;
+	font-size: 1.2rem;
+	color: var(--color-success);
+}
+.discount_line {
+	font-weight: bold;
+	color: var(--color-accent2)
+}
+
+
+.button_row {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+button {
+	color: white;
+	padding: 20px;
+	width: 100%;
+	font-weight: bold;
+	border-radius: 6px;
+	border: none;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+button:hover {
+	transform: translateY(-2px);
+}
+button:active {
+	transform: scale(0.95);
+}
+button[type="submit"] {
+	background-color: var(--color-success);
+	color: var(--color-success-dark);
+}
+
+button[type="submit"]:hover {
+	background-color: var(--color-success-dark);
+	color: var(--color-success);
+}
+
+button[type="reset"] {
+	background-color: var(--color-warning);
+	color: var(--color-warning-dark);
+}
+
+button[type="reset"]:hover {
+	background-color: var(--color-warning-dark);
+	color: var(--color-warning);
+}
+
+@keyframes pulse {
+	0% { transform: rotate(-8deg) scale(1); }
+	50% { transform: rotate(-8deg) scale(1.08); }
+	100% { transform: rotate(-8deg) scale(1); }
+}
+
+.sale_badge {
+	display: block;
+	margin: 0 auto 20px;
+	color: var(--color-accent2);
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: center;
+	animation: pulse 1.2s ease-in-out infinite;
+}
+</style>
+</head>
+<body>
+<form novalidate>
+
+	<h1>B & B</h1>
+	<h2>SHOP</h2>
+	<hr>
+
+
+
+	<div class="menu_buttons">
+		<a href="index.html" id="btn_home" class="btn">Home</a>
+		<a href="howto.html" id="btn_howto" class="btn">How To</a>
+		<a href="media.html" id="btn_media" class="btn">Media</a>
+		<a href="shop.html" id="btn_shop" class="btn">Shop</a>
+		<a href="contact.html" id="btn_contact" class="btn">Contact</a>
+	</div>
+
+
+
+	<span class="sale_badge">SALE!</span>
+
+
+
+	<fieldset>
+		<legend>Shop</legend>
+
+		<div class="order_row">
+			<span>Arduino Uno Starter Kit</span>
+			<span class="price_cell"><span class="original_price">$35.00</span><span class="sale_price">$0.99</span></span>
+			<input type="number" class="qty_input" min="0" value="0" data-price="0.99" data-name="Arduino Uno Starter Kit" aria-label="Quantity for Arduino Uno Starter Kit">
+		</div>
+
+		<div class="order_row">
+			<span>Breadboard</span>
+			<span class="price_cell"><span class="original_price">$5.00</span><span class="sale_price">$0.99</span></span>
+			<input type="number" class="qty_input" min="0" value="0" data-price="0.99" data-name="Breadboard" aria-label="Quantity for Breadboard">
+		</div>
+
+		<div class="order_row">
+			<span>LED Pack (20)</span>
+			<span class="price_cell"><span class="original_price">$4.00</span><span class="sale_price">$0.99</span></span>
+			<input type="number" class="qty_input" min="0" value="0" data-price="0.99" data-name="LED Pack (20)" aria-label="Quantity for LED Pack">
+		</div>
+
+		<div class="order_row">
+			<span>Resistor Kit (100)</span>
+			<span class="price_cell"><span class="original_price">$6.00</span><span class="sale_price">$0.99</span></span>
+			<input type="number" class="qty_input" min="0" value="0" data-price="0.99" data-name="Resistor Kit (100)" aria-label="Quantity for Resistor Kit">
+		</div>
+	</fieldset>
+
+
+
+	<fieldset>
+		<legend>Shipping Method</legend>
+
+		<select id="shipping" aria-label="Shipping Method">
+			<option value="0">USPS (Free)</option>
+			<option value="1000">Hand delivered by me personally ($1000.00)</option>
+		</select>
+	</fieldset>
+
+
+
+	<fieldset>
+		<legend>Order Summary</legend>
+		<div id="order_summary" aria-live="polite">
+			<p>No items selected yet.</p>
+		</div>
+	</fieldset>
+
+
+
+	<fieldset>
+		<legend>Address</legend>
+
+		<label for="address">Address</label>
+		<input type="text" id="address" name="address">
+
+		<label for="city">City</label>
+		<input type="text" id="city" name="city">
+
+		<label for="state">State</label>
+		<input type="text" id="state" name="state">
+
+		<label for="zip">ZIP Code</label>
+		<input type="text" id="zip" name="zip">
+	</fieldset>
+
+
+
+
+	<fieldset>
+		<legend>Payment</legend>
+
+		<label for="card_number">Card Number</label>
+		<input type="text" id="card_number" name="card_number">
+
+		<label for="card_expiration">Expiration Date</label>
+		<input type="text" id="card_expiration" name="card_expiration" placeholder="MM/YY">
+
+		<label for="card_cvv">CVV</label>
+		<input type="text" id="card_cvv" name="card_cvv">
+	</fieldset>
+
+	<div class="button_row">
+		<button type="submit">Place Order</button>
+		<button type="reset">Clear Order</button>
+	</div>
+
+</form>
+
+
+
+
+
+<script>
+	const qtyInputs = document.querySelectorAll('.qty_input');
+	const shippingSelect = document.getElementById('shipping');
+	const orderSummary = document.getElementById('order_summary');
+	const form = document.querySelector('form');
+
+	function updateSummary() {
+		let itemCount = 0;
+		let subtotal = 0;
+		let lines = '';
+
+		qtyInputs.forEach(function (input)
+		{
+			const qty = parseInt(input.value) || 0;
+			if (qty > 0) {
+				const lineTotal = qty * parseFloat(input.dataset.price);
+				subtotal += lineTotal;
+				itemCount += qty;
+				lines += '<p>' + qty + ' x ' + input.dataset.name + ' - $' + lineTotal.toFixed(2) + '</p>';
+			}
+		});
+
+		if (itemCount === 0) {
+			orderSummary.innerHTML = '<p>No items selected yet.</p>';
+			return;
+		}
+
+		const discount =  subtotal > 5 ? subtotal * 0.1 : 0;
+		const shipping = parseFloat(shippingSelect.value);
+		const total = subtotal - discount + shipping;
+
+		lines += '<p>Subtotal: $' + subtotal.toFixed(2) + '</p>';
+		if (discount > 0) {
+			lines += '<p class="discount_line">Discount (10% off orders over $5): -$' + discount.toFixed(2) + '</p>';
+		}
+		lines += '<p>Shipping: $' + shipping.toFixed(2) + '</p>';
+		lines += '<p class="summary_total">Total: $' + total.toFixed(2) + '</p>';
+
+		orderSummary.innerHTML = lines;
+	}
+
+	qtyInputs.forEach(function (input) {
+		input.addEventListener('input', updateSummary);
+	});
+	shippingSelect.addEventListener('change', updateSummary);
+
+	form.addEventListener('submit', function (e) {
+		e.preventDefault();
+
+		var itemCount = 0;
+		qtyInputs.forEach(function (input) {
+			itemCount += parseInt(input.value) || 0;
+		});
+
+		if (itemCount === 0) {
+			orderSummary.innerHTML = "<p>Please select at least one item before placing your order.</p>";
+			return;
+		}
+
+		orderSummary.innerHTML = "<p>Thank you! Your order has been placed.</p>";
+	});
+
+	form.addEventListener('reset', function ()
+	{
+		setTimeout(updateSummary, 0);
+		//updateSummary() - does not clear the order summary for some reason -- takes two presses to clear.
+	});
+</script>
+
+
+
+</body>
+</html>
